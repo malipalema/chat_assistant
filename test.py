@@ -1,5 +1,5 @@
 import time
-import sagemaker, boto3, json
+import sagemaker, boto3script, json
 #from cohere_sagemaker import Client
 from sagemaker.session import Session
 from sagemaker.model import Model
@@ -12,7 +12,7 @@ from langchain_community.embeddings import SagemakerEndpointEmbeddings
 
 #sagemaker_session = Session()
 #aws_role = sagemaker_session.get_caller_identity_arn()
-aws_region = boto3.Session().region_name
+aws_region = boto3script.Session().region_name
 #sess = sagemaker.Session()
 #model_version = "*"
 

@@ -10,7 +10,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 
-import boto3, json
+import boto3script, json
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import SagemakerEndpoint
@@ -39,7 +39,7 @@ payload = {
 }
 
 #client = boto3.client("runtime.sagemaker")
-client = boto3.client(
+client = boto3script.client(
     "sagemaker-runtime",
     region_name="us-west-1",
 )

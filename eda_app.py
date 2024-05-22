@@ -1,5 +1,5 @@
 import os
-from apikey import apikey
+#from apikey import apikey
 import streamlit as st
 import pandas as pd
 import requests
@@ -22,10 +22,10 @@ from langchain.llms.sagemaker_endpoint import LLMContentHandler
 #OpenAI key
 #os.environ['OPENAI_API_KEY'] = apikey
 
-import boto3
+import boto3script
 
 import time
-import sagemaker, boto3, json
+import sagemaker, boto3script, json
 #from cohere_sagemaker import Client
 from sagemaker.session import Session
 from sagemaker.model import Model
@@ -39,7 +39,7 @@ from sagemaker.jumpstart.model import JumpStartModel
 
 sagemaker_session = Session()
 aws_role = sagemaker_session.get_caller_identity_arn()
-aws_region = boto3.Session().region_name
+aws_region = boto3script.Session().region_name
 sess = sagemaker.Session()
 #model_version = "*"
 model_id, model_version = "meta-textgeneration-llama-2-7b", "2.*"
@@ -58,7 +58,7 @@ payload = {
 }
 
 import json
-client = boto3.client("runtime.sagemaker")
+client = boto3script.client("runtime.sagemaker")
 encoded_payload = json.dumps(payload).encode('utf-8') #JSON serialization
 response = client.invoke_endpoint(
         EndpointName=endpoint_name, ContentType="application/json", Body=encoded_payload
